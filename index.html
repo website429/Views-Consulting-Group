@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIEWS Consulting group</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2784/2784408.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 50px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    :root {
+      --primary: #2563EB;
+      --dark: #0F172A;
+      --white: #fff;
+      --gray-bg: #f7fafe;
+      --radius: 18px;
+      --shadow: 0 4px 18px 0 rgba(31, 41, 55, 0.14);
+      --glass-bg: rgba(255,255,255,0.15);
+      --glass-blur: blur(8px);
+      --section-spacing: 68px;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: var(--gray-bg);
+      color: var(--dark);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    /* ==============================
+      NAVIGATION
+    ================================ */
+    nav {
+      position: fixed;
+      width: 100vw;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      background: transparent;
+      transition: background 0.3s;
+      backdrop-filter: blur(0px) brightness(1);
+    }
+    nav.scrolled {
+      background: rgba(15, 23, 42, 0.95);
+      box-shadow: 0 2px 18px rgba(31,41,55,0.15);
+      backdrop-filter: blur(12px) brightness(0.98);
+    }
+    .navbar {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 2vw;
+      display: flex;
+      align-items: center;
+      height: 80px;
+      justify-content: space-between;
+      padding-left: 0;
+      margin-left: 5px;
+      padding-right: 20px;
+      width: 100%;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 2px;
+      gap: 12px;
+      text-decoration: none;
+      height: 100%;
+    }
+    .logo img {
+      width: 45px;
+      height: 45px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      padding-top: 20px;
+      margin-left: auto;
+      padding-left: 0;
+    }
+    .nav-links a {
+      color: var(--white);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+      font-size: 1rem;
+      position: relative;
+      padding: 6px 3px;
+      
+
+    }
+    nav:not(.scrolled) .nav-links a {
+      color: var(--dark);
+    }
+    .nav-links a::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 0;
+      background: var(--primary);
+      transition: width 0.2s;
+      margin-top: 3px;
+      border-radius: 2px;
+    }
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      gap: 7px;
+      z-index: 101;
+    }
+    .hamburger span {
+      display: block;
+      height: 4px;
+      width: 100%;
+      background: var(--primary);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    
+    @media (max-width: 1100px) {
+      .nav-links {
+        position: fixed;
+        top: 68px;
+        left: 0;
+        width: 100vw;
+        background: rgba(15, 23, 42, 0.97);
+        flex-direction: column;
+        gap: 0;
+        transform: translateY(-150%);
+        transition: transform 0.4s cubic-bezier(0.54, -0.42, 0.48, 1.4);
+        padding: 0;
+      }
+      .nav-links.open {
+        transform: translateY(0);
+        box-shadow: 0 6px 24px 0 rgba(31, 41, 55, 0.08);
+      }
+      .nav-links li {
+        margin: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        width: 100%;
+        text-align: center;
+      }
+      .nav-links a {
+        color: #fff !important;
+        display: block;
+        padding: 18px 0;
+        font-size: 1.2rem;
+      }
+      .hamburger {
+        display: flex;
+      }
+      nav.scrolled .nav-links a {
+        color: #fff;
+      }
+    }
+    /* ==============================
+      HERO SECTION
+    ================================ */
+    .hero {
+      background: linear-gradient(120deg, rgba(0,0,0,0.32),rgba(37,99,235,0.09) 84%), url('images/bg-image.jpg') center/cover no-repeat;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      position: relative;
+      padding: 0 0 0 2vw;
+      padding-top: 90px;
+    }
+    .hero-content {
+      max-width: 700px;
+      padding: 44px 46px 44px 38px;
+      margin-left: 1vw;
+      box-shadow: 0 2px 34px 0 rgba(0,0,0,0.11);
+      animation: fadeInUp 1.2s cubic-bezier(.48,.27,.62,1.21);
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--white);
+      text-shadow: 0 2px 10px rgba(31,41,55,0.18);
+      margin-bottom: 18px;
+      letter-spacing: -0.5px;
+      line-height: 1.13;
+    }
+    .hero p {
+      color: #f3f5fb;
+      font-size: 1.27rem;
+      font-weight: 400;
+      margin: 0 0 34px 1px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 15px 34px;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: #fff;
+      box-shadow: 0 6px 18px 0 rgba(37,99,235,0.09);
+      letter-spacing: 0.7px;
+      transition: transform .13s, background .2s, box-shadow .18s;
+      outline: none;
+      text-decoration: none !important;
+      border: 2px solid white;
+    }
+    .btn:hover, .btn:focus {
+      background: #174eba;
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 14px 32px 0 rgba(37,99,235,0.13);
+    }
+    .btn.secondary {
+      background: var(--white);
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      transition: background .19s, color .19s, border .19s;
+    }
+    .btn.secondary:hover, .btn.secondary:focus {
+      background: var(--primary);
+      color: #fff;
+      border: 2px solid #174eba;
+    }
+    @media (max-width: 800px) {
+      .hero-content {
+        padding: 32px 4vw 32px 4vw;
+        margin-left: 0;
+      }
+      .hero h1 { font-size: 2.1rem; }
+      .hero p { font-size: 1.05rem; }
+    }
+    @media (max-width: 560px) {
+      .hero {
+        padding-left: 0;
+        justify-content: flex-end;
+        min-height: 70vh;
+      }
+      .hero-content {
+        padding: 22px 5vw 24px 5vw;
+        border-radius: 11px;
+      }
+      .hero-buttons {
+        gap: 14px;
+      }
+      nav.scrolled .logo, .logo {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* ==============================
+      SECTION HEADINGS
+    ================================ */
+    section {
+      padding: var(--section-spacing) 0;
+      position: relative;
+      background: none;
+    }
+    section:not(.hero):not(.stats) {
+      background: var(--gray-bg);
+    }
+    .section-title {
+      font-size: 30px !important;
+      font-weight: 800;
+      color: gold;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+      word-spacing: 2px;
+      text-align: center;
+      text-shadow: 0 2px 10px rgba(31,41,55,0.03);
+      line-height: 1.12;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: all 0.8s cubic-bezier(.41,.41,.36,1.13);
+    }
+    .section-title.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section-desc {
+      text-align: center;
+      color: black;
+      font-size: 1.10rem;
+      max-width: 550px;
+      margin: 0 auto 44px;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: all 0.9s cubic-bezier(.41,.41,.36,1.13);
+    }
+    .section-desc.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==============================
+      ABOUT SECTION
+    ================================ */
+    .about-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .about-intro {
+      flex: 1.2 1 300px;
+      min-width: 270px;
+      max-width: 480px;
+      background: url(images/bg-image2.jpg);
+      padding: 38px 32px 28px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: all 0.95s cubic-bezier(.41,.41,.36,1.13);
+      color: white;
+      font-weight: bold;
+      line-height: 25px;
+      text-shadow: 10px 10px 10px black;
+    }
+    .about-intro.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .about-list {
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      min-width: 260px;
+      opacity: 0;
+      transform: translateX(30px);
+      transition: all 1.1s cubic-bezier(.41,.41,.36,1.13);
+    }
+    .about-list.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .about-list-item {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: 0 3px 13px 0 rgba(15,23,42,0.06);
+      padding: 20px 26px 15px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      border-left: 5px solid var(--primary);
+      border-bottom: 2px solid rgba(31,41,55,0.045);
+    }
+    .about-list-item h4 {
+      margin: 0 0 4px 0;
+      color: var(--dark);
+      font-weight: 700;
+      font-size: 1.13rem;
+    }
+    .about-list-item p {
+      margin: 0;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    @media (max-width: 900px) {
+      .about-container {
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+      }
+      .about-intro,
+      .about-list {
+        max-width: 720px;
+        width: 95vw;
+      }
+    }
+    /* ==============================
+      SERVICES
+    ================================ */
+    .services-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 34px;
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 8px 20px;
+    }
+    .service-card {
+      border: 2px solid rgb(32, 32, 149);
+      border-radius: var(--radius);
+      padding: 38px 38px 32px;
+      flex: 1 1 280px;
+      max-width: 340px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform .26s cubic-bezier(.41,.41,.36,1.13), box-shadow .22s;
+      position: relative;
+      min-width: 270px;
+      min-height: 200px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(35px);
+    }
+    .service-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .1s;
+    }
+    .service-card:hover, .service-card:focus {
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: 0 18px 32px 0 rgba(37,99,235,0.15);
+      z-index: 2;
+      background: linear-gradient(120deg,#e8effb 55%, #f7fafe 100%);
+    }
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(37,99,235,0.13), rgba(37,99,235,0.22));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.45rem;
+      color: var(--primary);
+      margin-bottom: 16px;
+      box-shadow: 0 2px 12px 0 rgba(37,99,235,0.07);
+    }
+    .service-title {
+      font-size: 1.19rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 7px;
+      margin-top: 2px;
+      text-align: center;
+    }
+    .service-desc {
+      color: #4c5c7f;
+      font-size: 0.99rem;
+      text-align: center;
+    }
+    @media (max-width: 1240px) {
+      .services-list { gap: 18px;}
+      .service-card { padding: 28px 18px 24px; }
+    }
+    @media (max-width: 800px) {
+      .services-list { gap: 18px; }
+      .service-card { max-width: 97vw; min-width: 0; }
+    }
+    @media (max-width: 580px) {
+      .service-card { padding: 18px 8vw 16px; font-size: 99%; }
+    }
+    @media (max-width: 768px) {
+      .services-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .portfolio-list {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      .state {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 15px !important;
+      }
+      .service-card {
+        flex: 0 0 calc(50% 15px);
+        box-sizing: border-box;
+      }
+    }
+    
+    /* ==============================
+      WHY CHOOSE US
+    ================================ */
+    .features-list {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+    .feature-card {
+      background: rgba(255,255,255,0.84);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 18px 0 rgba(15,23,42,0.08);
+      padding: 33px 34px 27px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 1 1 220px;
+      min-width: 180px;
+      max-width: 280px;
+      border-left: 4px solid var(--primary);
+      position: relative;
+      opacity: 0;
+      transform: scale(0.94) translateY(24px);
+      transition: all 0.8s cubic-bezier(.41,.41,.36,1.13);
+    }
+    .feature-card.visible {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    .feature-icon {
+      color: #23B26D;
+      font-size: 1.9rem;
+      margin-bottom: 11px;
+      margin-right: 3px;
+    }
+    .feature-title {
+      margin: 0 0 5px 0;
+      font-weight: 700;
+      font-size: 1.13rem;
+      color: var(--dark);
+    }
+    .feature-desc {
+      color: #4b5879;
+      font-size: 0.98rem;
+    }
+    /* =============================
+      STATISTICS
+     ============================= */
+    .stats {
+      background: linear-gradient(93deg, #f6faff 70%, #eaf0fa 100%);
+      padding: 50px 0 37px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .stats-list {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 54px;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      max-width: 970px;
+    }
+    .stat-card {
+      background: #fff;
+      box-shadow: 0 8px 16px 0 rgba(37,99,235,0.08);
+      padding: 34px 44px;
+      border-radius: var(--radius);
+      min-width: 180px;
+      max-width: 230px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 14px;
+      opacity: 0;
+      transform: scale(0.97) translateY(32px);
+      transition: all 0.75s cubic-bezier(.41,.41,.36,1.13);
+    }
+    .stat-card.visible {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    .stat-count {
+      font-size: 2.42rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 4px;
+      letter-spacing: 2px;
+    }
+    .stat-label {
+      color: #232c44;
+      font-size: 1.05rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    @media (max-width: 700px) {
+      .stats-list { gap: 16px; }
+      .stat-card { padding: 22px 8vw; }
+    }
+    /* ===============================
+       PORTFOLIO
+     ================================ */
+    .portfolio-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 42px;
+      justify-content: center;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 10px 0 4px;
+    }
+    .portfolio-card {
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 6px 22px 0 rgba(15,23,42,0.08);
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 370px;
+      min-width: 270px;
+
+      min-height: 190px;
+      flex: 1 1 340px;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: transform 0.22s, box-shadow 0.21s;
+      opacity: 0;
+      transform: translateY(22px);
+      position: relative;
+    }
+    .portfolio-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .portfolio-card:hover, .portfolio-card:focus {
+      transform: scale(1.035) translateY(-8px);
+      box-shadow: 0 18px 42px 0 rgba(37,99,235,0.13);
+    }
+    .portfolio-img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      background: #c2cbe5;
+      border-radius: 0;
+      border-bottom: 1px solid #eee;
+    }
+    .portfolio-overlay {
+      position: absolute;
+      top: 20px; left: 20px;
+    }
+    .portfolio-content {
+      padding: 26px 19px 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 6px;
+    }
+    .portfolio-title {
+      font-size: 1.13rem;
+      font-weight: 700;
+      color: gold;
+      text-shadow: 10px 10px 5px black;
+    }
+    .portfolio-desc {
+      color: #26325f;
+      font-size: 0.98rem;
+    }
+    @media (max-width: 900px) {
+      .portfolio-list { gap: 20px; }
+      .portfolio-card { min-width: 180px; }
+    }
+
+    /* ===============================
+       TESTIMONIALS
+     ================================ */
+    .testimonials-slider {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 4vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .testimonial-card {
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 6px 26px 0 rgba(37,99,235,0.10);
+      border-radius: var(--radius);
+      padding: 34px 24px 30px;
+      max-width: 520px;
+      min-height: 165px;
+      margin: 0 auto;
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      opacity: 0;
+      transform: scale(.96) translateY(28px);
+      transition: all 0.8s cubic-bezier(.41,.41,.36,1.13);
+      position: absolute;
+      left: 0; right: 0;
+      top: 0;
+    }
+    .testimonial-card.active {
+      display: flex;
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      position: relative;
+    }
+    .testimonial-quote {
+      font-size: 1.12rem;
+      color: black;
+      margin-bottom: 14px;
+      font-style: italic;
+      font-weight: bold;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.01rem;
+      color: var(--primary);
+      margin-top: 3px;
+    }
+    .testimonial-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #e1eaff;
+    }
+    .testimonial-controls {
+      display: flex;
+      gap: 20px;
+      margin-top: 36px;
+      justify-content: center;
+      align-items: center;
+    }
+    .testimonial-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      font-size: 1.12rem;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(37,99,235,0.05);
+      transition: background 0.19s, transform 0.12s;
+    }
+    .testimonial-btn:hover, .testimonial-btn:focus {
+      background: #174eba;
+      transform: scale(1.07);
+    }
+    #testimonials {
+      background: url(images/bg-image2.jpg);
+      border-radius: 0 !important;
+    }
+    /* ==============================
+      FAQ
+    ================================ */
+    .faq-list {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+    .faq-item {
+      background: #fff;
+      margin-bottom: 18px;
+      border-radius: var(--radius);
+      box-shadow: 0 1px 8px 0 rgba(15,23,42,0.05);
+      overflow: hidden;
+      transition: box-shadow 0.17s;
+    }
+    .faq-item.open {
+      box-shadow: 0 12px 26px 0 rgba(37,99,235,0.14);
+    }
+    .faq-question {
+      font-weight: 700;
+      color: var(--primary);
+      padding: 19px 36px 19px 24px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      width: 100%;
+      text-align: left;
+      outline: none;
+      font-size: 1.09rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background .12s;
+    }
+    .faq-question:hover, .faq-question:focus {
+      background: #e8f0fa;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      background: #f3f4f8;
+      color: #25335f;
+      font-size: 0.98rem;
+      padding: 0 30px;
+      transition: all 0.33s cubic-bezier(0.57,0,0.29,0.99);
+    }
+    .faq-item.open .faq-answer {
+      max-height: 244px;
+      padding-top: 10px;
+      padding-bottom: 18px;
+      opacity: 1;
+    }
+    /* ============================
+        CONTACT
+    ============================= */
+    .contact-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+    .contact-form-section {
+      flex: 1.2 1 270px;
+      min-width: 280px;
+      box-shadow: var(--shadow);
+      padding: 36px 36px 24px 34px;
+      margin-bottom: 18px;
+      opacity: 0;
+      transform: translateX(-24px);
+      transition: all 0.94s cubic-bezier(.41,.41,.36,1.13);
+      background: none !important;
+    }
+    .contact-form-section.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contact-label {
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 5px;
+      letter-spacing: 0.4px;
+    }
+  
+    .contact-btns {
+      display: flex;
+      gap: 16px;
+      margin-top: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .contact-btns .btn {
+      width: 120px;
+    }
+    .contact-links {
+      display: flex;
+      gap: 16px;
+      margin-top: 21px;
+      align-items: center;
+    }
+    .contact-link-btn {
+      padding: 10px 14px;
+      background: #229ED9;
+      color: #fff !important;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.16rem;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.18s, box-shadow 0.17s;
+      box-shadow: 0 1px 6px rgba(34,158,217,0.07);
+    }
+    .contact-link-btn:hover, .contact-link-btn:focus {
+      background: #1a709b;
+      box-shadow: 0 6px 18px rgba(34,158,217,0.11);
+    }
+    .contact-link-btn.whatsapp {
+      background: #25D366;
+    }
+    .contact-link-btn.whatsapp:hover, .contact-link-btn.whatsapp:focus {
+      background: #179b45;
+    }
+    .contact-info-section {
+      flex: 1 1 240px;
+      min-width: 240px;
+      
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 37px 28px 24px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      opacity: 0;
+      transform: translateX(24px);
+      transition: all 1s cubic-bezier(.41,.41,.36,1.13);
+    }
+    .contact-info-section.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .contact-info-label {
+      font-weight: 700;
+      font-size: 1.09rem;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .contact-info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 11px 0;
+      color: #475287;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    .contact-info-list li {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .contact-map {
+      height: 200px;
+      background: #c2cffb;
+      border-radius: 7px;
+      margin-top: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-map-placeholder {
+      width: 100%;
+      height: 100%;
+      background: transparent url('https://maps.googleapis.com/maps/api/staticmap?center=Addis+Ababa,Ethiopia&zoom=12&size=350x150&maptype=roadmap&key=AIzaSyD1-STATIC-KEY') center/cover no-repeat;
+      filter: grayscale(0.18) brightness(0.97) contrast(1.01);
+      border-radius: inherit;
+      display: block;
+    }
+    /* error state for form fields */
+    .contact-input.invalid, .contact-textarea.invalid {
+      border: 1.5px solid #e23c3c;
+      background: #fff4f4;
+    }
+    #contact {
+      background: url(images/bg-image1.jpg);
+      padding-top: 5px;
+      scroll-margin-top: 57px;
+      scroll-margin-bottom: 0;
+      border-radius: 0 !important;
+    }
+    
+    /* ============================
+        FOOTER
+    ============================= */
+    footer {
+      background: var(--dark);
+      color: #c2cbe5;
+      padding: 46px 0 26px;
+      margin-top: 0;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 -2px 10px rgba(31,41,55,0.13);
+    }
+    .footer-container {
+      max-width: 1220px;
+      margin: 0 auto 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 0 18px;
+    }
+    .footer-col {
+      flex: 1 1 220px;
+      min-width: 180px;
+      margin-bottom: 0 !important;
+      text-align: left;
+    }
+    .footer-logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 1px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 9px;
+    }
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links a {
+      color: #c2cbe5;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 9px;
+      font-size: 1rem;
+      transition: color 0.17s;
+    }
+    .footer-links a:hover, .footer-links a:focus {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+    .footer-social {
+      display: flex;
+      gap: 18px;
+      margin-top: 12px;
+      align-items: center;
+    }
+    .footer-social a {
+      color: #c2cbe5;
+      font-size: 1.3rem;
+      background: rgba(255,255,255,0.09);
+      border-radius: 100%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: background 0.17s, color 0.17s;
+    }
+    .footer-social a:hover, .footer-social a:focus {
+      color: var(--primary);
+      background: rgba(66,100,230,0.13);
+    }
+    .footer-copyright {
+      color: #93a3cc;
+      font-size: 0.99rem;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+    @media (max-width: 1000px) {
+      .footer-container { flex-direction: column; gap:0px; align-items: flex-start;}
+      .footer-col { text-align: left;}
+    }
+    /* === Animations === */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(36px)
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+    /* UTILITY */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    /* Responsive sections padding */
+    @media (max-width: 540px) {
+      section { padding: 44px 0; }
+      .stats { padding: 22px 0 22px; }
+      .section-title { font-size: 1.2rem;}
+    }
+
+
+    
+
+    
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="navbar">
+      <a href="#home" class="logo"><img src="images/arma1.jpg" style="border-radius: 50%;" alt="Fullbright Consultancy Services logo"/>VIEWS Consulting Group </a>
+      <button class="hamburger" aria-label="Open navigation menu" aria-controls="mainmenu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="mainmenu">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Choose Us</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content" >
+      <h1 style="text-shadow: 10px 10px 5px black;">Helping Ethiopian Businesses Grow Through Innovation</h1>
+      <p style="font-weight: bold; text-shadow: 10px 10px 5px black;">
+        VIEWS Consulting group empowers organizations and entrepreneurs in Ethiopia to achieve sustainable growth by providing world-class consulting, digital, and business development services tailored to local needs.
+      </p>
+      <div class="hero-buttons">
+        <a class="btn" href="#contact" style="text-shadow: 10px 10px 10px black;">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 class="section-title" >About VIEWS Consulting Group</h2>
+    <p class="section-desc">
+      A trusted partner in Ethiopian business development, innovation, and consulting.
+    </p>
+    <div class="about-container">
+      <div class="about-intro fade-in">
+        <h3 style="color: #2563EB; font-size:1.25rem; margin-bottom:7px;">Who We Are</h3>
+        <p>
+          VIEWS Consulting Group is a premier business development and consulting firm based in Mekele, Tigray, Ethiopia. Our dynamic team is dedicated to guiding startups and established companies towards success, efficiency, and sustainable growth in the local and global market.
+        </p>
+      </div>
+      <div class="about-list fade-in">
+        <div class="about-list-item">
+          <h4>Our Mission</h4>
+          <p>To empower Ethiopian businesses by delivering innovative, reliable, and impactful business development solutions and consulting services.</p>
+        </div>
+        <div class="about-list-item">
+          <h4>Our Vision</h4>
+          <p>To be Ethiopia's leading catalyst for business growth, recognized for excellence and integrity.</p>
+        </div>
+        <div class="about-list-item">
+          <h4>Our Core Values</h4>
+          <p>Integrity, Innovation, Client Focus, Excellence, Teamwork, and Commitment to Local Development.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-desc">Comprehensive business solutions designed to help organizations thrive and innovate.</p>
+    <div class="services-list">
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <span aria-hidden="true">💼</span>
+        </div>
+        <div class="service-title">Business Consulting</div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <span aria-hidden="true">🚀</span>
+        </div>
+        <div class="service-title">Startup Support</div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <span aria-hidden="true">📝</span>
+        </div>
+        <div class="service-title">Business Registration</div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <span aria-hidden="true">📲</span>
+        </div>
+        <div class="service-title">Digital Marketing</div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <span aria-hidden="true">📊</span>
+        </div>
+        <div class="service-title">Financial Consulting</div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <span aria-hidden="true">🎓</span>
+        </div>
+        <div class="service-title">Professional Training</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why">
+    <h2 class="section-title">Why VIEWS Consulting Group ?</h2>
+    <p class="section-desc">Fullbright Consultancy delivers strategic business value with proven results and innovative approaches.</p>
+    <div class="features-list">
+      <div class="feature-card fade-in">
+        <span class="feature-icon" aria-hidden="true" >✔️</span>
+        <div class="feature-title">Experienced Team</div>
+      </div>
+      <div class="feature-card fade-in">
+        <span class="feature-icon" aria-hidden="true">💡</span>
+        <div class="feature-title">Affordable Solutions</div>
+      </div>
+      <div class="feature-card fade-in">
+        <span class="feature-icon" aria-hidden="true">⚡</span>
+        <div class="feature-title">Fast Service</div>
+      </div>
+      <div class="feature-card fade-in">
+        <span class="feature-icon" aria-hidden="true">🤝</span>
+        <div class="feature-title">Trusted by Clients</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATISTICS -->
+  <section class="stats" id="statistics">
+    <div class="stats-list">
+      <div class="stat-card fade-in">
+        <div class="stat-count" data-target="150">0+</div>
+        <div class="stat-label">Businesses Served</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="stat-count" data-target="98">0%</div>
+        <div class="stat-label">Satisfied Clients</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="stat-count" data-target="10">0+</div>
+        <div class="stat-label">Professional Experts</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="stat-count" data-target="8">0+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <h2 class="section-title">Our Portfolio</h2>
+    <p class="section-desc">A showcase of client success stories and outstanding impact.</p>
+    <div class="portfolio-list">
+      <!--card 1-->
+      <div class="portfolio-card fade-in">
+        <img class="portfolio-img" src="images/bg-image3.jpg" alt="project description"/>
+        <div class="portfolio-overlay">
+          <div class="portfolio-title">Business Strategy planning</div>
+        </div>
+      </div>
+
+      <!--card 2-->
+      <div class="portfolio-card fade-in">
+        <img class="portfolio-img" src="images/bg-image4.jpg" alt="Digital Marketing Success"/>
+        <div class="portfolio-overlay">
+          <div class="portfolio-title">brand acceleration</div>
+        </div>
+      </div>
+
+      <!--card 3-->
+      <div class="portfolio-card fade-in">
+        <img class="portfolio-img" src="images/bg-image5.jpg" alt="Business Registration"/>
+        <div class="portfolio-overlay">
+          <div class="portfolio-title">Business registeration</div>
+        </div>
+      </div>
+      <!--card 4-->
+      <div class="portfolio-card fade-in">
+        <img class="portfolio-img" src="images/bg-image6.jpg" alt="Startup Launch"/>
+        <div class="portfolio-overlay">
+          <div class="portfolio-title">Start up growth</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" style="border-radius: 0 !important;">
+    <h2 class="section-title">Testimonials</h2>
+    <p class="section-desc" style="color: #25D366; font-weight: bold;">Hear from those we've helped grow.</p>
+    <div class="testimonials-slider" id="testimonial-slider">
+      <div class="testimonial-card active fade-in">
+        <div class="testimonial-quote">"VIEWS Consulting Group's strategic advice has been a game-changer for our startup. Their deep understanding of the Ethiopian market enabled us to launch rapidly and scale with confidence."</div>
+        <div class="testimonial-author">
+          <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/31.jpg" alt="Samuel W."/>
+          Samuel W.<span style="font-weight:400; color:#4b5877"></span>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-quote">"VIEWS Consulting Group handled our business registration and compliance seamlessly. Their professionalism and swift service let us focus on growing our business."</div>
+        <div class="testimonial-author">
+          <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/46.jpg" alt="Mekdes G."/>
+          Mekdes G.<span style="font-weight:400; color:#4b5877"></span>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-quote">"The digital marketing team at VIEWS Consulting Group elevated our brand and brought measurable results. We saw a huge increase in engagement and conversions."</div>
+        <div class="testimonial-author">
+          <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/85.jpg" alt="Abel F."/>
+          Abel F.<span style="font-weight:400; color:#4b5877"></span>
+        </div>
+      </div>
+      <div class="testimonial-controls">
+        <button aria-label="Previous testimonial" class="testimonial-btn" id="testimonial-prev">&lt;</button>
+        <button aria-label="Next testimonial" class="testimonial-btn" id="testimonial-next">&gt;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-desc">Find answers to common questions about our services.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you provide support for startups and new businesses?
+          <span aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          Absolutely! We provide end-to-end startup mentoring, business plan development, legal registration, and market launch support.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How long does business registration typically take?
+          <span aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          Usually, business registration in Ethiopia takes 1-3 weeks depending on the complexity, type of business, and required permits.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What are your consulting fees?
+          <span aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          Our fees are competitive and tailored to the scope and requirements of your project. Book a free consult to get a custom quote.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can you help with digital marketing and branding?
+          <span aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          Yes! Our digital marketing experts offer end-to-end services, including social media, SEO, and result-driven campaigns.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is your team familiar with local business regulations?
+          <span aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          Our experts have deep local knowledge of Ethiopian regulations, ensuring compliance and smooth business operations for clients.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT
+  <section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-desc" style="color: #25D366; font-weight: bold;">Let's take your business to the next level. Reach out to Fullbright Consultancy today!</p>
+    <div class="contact-container" style="justify-content: center !important; display: flex !important; padding: 10px !important;">
+      
+      <div class="contact-info-section fade-in" style="width: 100% !important; max-width: 600px !important; ">
+        <div class="contact-form-section fade-in" style="background: none;">
+        <div class="contact-links" style="height: 100%;">
+          <a href="tel:+251912345678">
+            <i class="fas fa-phone" style="font-size: larger; margin-right: 10px; background-color: red; padding: 8px 10px; border-radius: 3px;"></i>
+          </a>
+          <a href="https://t.me/Dr_Fullbright" class="contact-link-btn telegram" target="_blank" rel="noopener">
+            <i class="fab fa-telegram" ></i>
+          </a>
+          <a href="https://wa.me/251911871711" class="contact-link-btn whatsapp" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+        <div >
+          <div class="contact-info-label">Office Address</div>
+          <ul class="contact-info-list">
+            <li>
+              <span aria-hidden="true">📍</span>
+              Axum Hotel Street, Mekelle, Tigray
+            </li>
+            <li>
+              <span aria-hidden="true">📞</span>
+              <a href="tel:+251912345678" style="color:#2563EB;text-decoration:none;">09 11 87 17 11</a>
+            </li>
+            
+          </ul>
+        </div>
+        <div class="contact-map" style="margin-top: 20px;">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.8094650343096!2d39.47054147486386!3d13.485835386878883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x166afde36c898c3d%3A0x964226c54982f3ee!2sFullbright%20Consultancy%20Services!5e0!3m2!1sen!2set!4v1784305834628!5m2!1sen!2set"
+          width="100%" 
+          height="200" 
+          style="border:0; border-radius: 10px;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title" style="text-shadow: 10px 10px 5px black;">Contact Us</h2>
+  <p class="section-desc" style="color: black; font-weight: bold; margin-bottom: 0 !important; color: gold; text-shadow: 10px 10px 5px black;">We are here to help. Reach out to us through the channels below!</p>
+  
+  <div class="contact-container" style="justify-content: center; display: flex; padding: 10px;">
+    
+    <!-- የመረጃ እና የካርታ ክፍል -->
+    <div class="contact-info-section fade-in" style="width: 100%; max-width: 600px; padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow); border: 5px solid rgb(42, 42, 176);">
+      
+      <div class="contact-info-label" style="font-size: 1.5rem; margin-bottom: 10px; color: red; text-shadow: 10px 10px 5px black;">Our Office</div>
+      <ul class="contact-info-list" style="font-size: 1.1rem; list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px; text-shadow: 10px 10px 5px black; color: #e8effb;">📍 Hadinet, Mekele, Tigray</li>
+        <li style="margin-bottom: 10px; text-shadow: 10px 10px 5px black; ">📞 <a href="tel:+251934346264" style="color:#2563EB; text-decoration:none; color: #e8effb;">09 34 34 62 64</a></li>
+      </ul>
+      
+      <!-- ማህበራዊ ሚዲያ ሊንኮች -->
+      <div class="contact-links" style="display: flex; gap: 15px; margin-top: 10px;">
+         <a href="tel:+251934346264">
+            <i class="fas fa-phone" style="font-size: larger; margin-right: 10px; background-color: red; padding: 8px 10px; border-radius: 3px;"></i>
+          </a>
+          <a href="https://t.me/+251934346264" class="contact-link-btn telegram" target="_blank" rel="noopener">
+            <i class="fab fa-telegram" ></i>
+
+          </a>
+          <a href="https://wa.me/251934346264" class="contact-link-btn whatsapp" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+      </div>
+
+      <!-- ካርታ -->
+      <div class="contact-map" style="margin-top: 15px; width: 100%; height: 250px;">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.684143166071!2d39.465738!3d13.4935504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x166afdae38ab55b3%3A0x3e57ee3759590134!2sVIEWS%20Consulting%20Group!5e0!3m2!1sen!2set!4v1784449237746!5m2!1sen!2set"
+          width="100%" 
+          height="200" 
+          style="border:0; border-radius: 10px;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+      
+    </div>
+  </div>
+</section>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <a class="footer-logo" href="#home"><img src="images/arma1.jpg" style="width:50px;height:50px; border-radius: 50%; " alt="Fullbright Footer Logo"/>VIEWS Consulting Group</a>
+        <div style="color:#c2cbe5;font-size:1.01rem; margin-top: 15px; margin-bottom: 0 !important;">
+         📍 Hadinet, Mekele, Tigray
+        </div>
+      </div>
+      <div class="footer-col" style="margin-top: 0 !important;">
+        <div style="font-weight:600;color:#fff;margin-bottom:8px;">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col" style="margin-top: 50px;">
+        <div style="font-weight:600;color:#fff;margin-bottom:8px;">Contact</div>
+        <div class="footer-social">
+          <a href="tel:+251934346264">
+            <i class="fas fa-phone" ></i>
+          </a>
+
+          <a href="https://t.me/+251934346264" class="contact-link-btn telegram" target="_blank" rel="noopener">
+            <i class="fab fa-telegram" ></i>
+          </a>
+          
+          
+          <a href="https://wa.me/251934346264" class="contact-link-btn whatsapp" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="footer-copyright">
+      &copy; <span id="year"></span>Fullbright Consultancy All Rights Reserved.
+    </div>
+  </footer>
+  <script>
+    // NAVBAR STICKY BG + ACTIVE LINK
+    const navbar = document.getElementById('navbar');
+    const navLinks = Array.from(document.querySelectorAll(".nav-links a"));
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+      // ACTIVATE NAV LINKS ON SCROLL
+      let fromTop = window.scrollY + 80;
+      navLinks.forEach(link => {
+        let section = document.querySelector(link.hash);
+        if (!section) return;
+        if (
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop
+        ) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      });
+    });
+
+    // MOBILE NAV TOGGLE
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.getElementById('mainmenu');
+    hamburger.addEventListener('click', () => {
+      const opened = navMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', opened ? 'true' : 'false');
+    });
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // SMOOTH SCROLL FOR ANCHORS
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e){
+        if(this.getAttribute('href') !== "#") {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({behavior:"smooth"});
+          }
+        }
+      });
+    });
+
+    // HERO BG ANIMATION ON LOAD
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('.hero-content').classList.add('visible');
+    });
+
+    // INTERSECTION OBSERVER FOR FADE-IN ANIMATIONS
+    const fadeElements = document.querySelectorAll('.fade-in, .section-title, .section-desc, .service-card, .portfolio-card, .feature-card, .stat-card');
+    const observer = new window.IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    fadeElements.forEach(el => observer.observe(el));
+
+    // STATISTIC COUNTERS
+    function animateCounter(el, target, suffix){
+      let current = 0;
+      suffix = suffix || '';
+      let duration = 1000 + Math.random()*700;
+      let start = Date.now();
+      function update(){
+        let prog = Math.min(1, (Date.now() - start)/duration);
+        let val = Math.floor(prog * target);
+        el.textContent = val + suffix;
+        if(prog < 1) requestAnimationFrame(update);
+        else el.textContent = target + suffix;
+      }
+      update();
+    }
+    let statsObserved = false;
+    const statsSection = document.querySelector('.stats');
+    const statCards = document.querySelectorAll('.stat-card');
+    const statObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry=>{
+        if(entry.isIntersecting && !statsObserved){
+          statsObserved = true;
+          statCards.forEach(card => {
+            let num = Number(card.querySelector('.stat-count').dataset.target);
+            let label = card.querySelector('.stat-count').textContent.trim().match(/\+|%/)?.[0] || '';
+            animateCounter(card.querySelector('.stat-count'), num, label);
+          });
+        }
+      });
+    }, {threshold: 0.5});
+    statObserver.observe(statsSection);
+
+    // TESTIMONIAL SLIDER
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+    const btnPrev = document.getElementById('testimonial-prev');
+    const btnNext = document.getElementById('testimonial-next');
+    let testimonialIdx = 0;
+    function showTestimonial(idx){
+      testimonialCards.forEach((card, i) => {
+        card.classList.toggle('active', i===idx);
+      });
+    }
+    function nextTestimonial(){
+      testimonialIdx = (testimonialIdx + 1) % testimonialCards.length;
+      showTestimonial(testimonialIdx);
+    }
+    function prevTestimonial(){
+      testimonialIdx = (testimonialIdx - 1 + testimonialCards.length) % testimonialCards.length;
+      showTestimonial(testimonialIdx);
+    }
+    btnNext.addEventListener('click', nextTestimonial);
+    btnPrev.addEventListener('click', prevTestimonial);
+    // auto play testimonial every 7s
+    setInterval(nextTestimonial, 7000);
+
+    // FAQ ACCORDION
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', function(){
+        const item = this.parentElement;
+        const open = item.classList.toggle('open');
+        this.setAttribute('aria-expanded', open);
+        // close others (accordion style)
+        if(open){
+          document.querySelectorAll('.faq-item').forEach(i => {
+            if(i!==item) {
+              i.classList.remove('open');
+              i.querySelector('.faq-question').setAttribute('aria-expanded', false);
+            }
+          });
+        }
+      });
+    });
+
+    // CONTACT FORM VALIDATION
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let ok = true;
+      const name = this.name, email = this.email, message = this.message;
+      // validate name
+      let vName = name.value.trim();
+      let vEmail = email.value.trim();
+      let vMessage = message.value.trim();
+      if(!vName){
+        ok = false;
+        name.classList.add('invalid');
+        document.getElementById('error-name').style.display = 'block';
+      } else {
+        name.classList.remove('invalid');
+        document.getElementById('error-name').style.display = 'none';
+      }
+      // validate email
+      const emailRegex = /^[^\s@]+@[^\s@]+.[a-z]{2,}$/;
+      if(!vEmail.match(emailRegex)){
+        ok = false;
+        email.classList.add('invalid');
+        document.getElementById('error-email').style.display = 'block';
+      } else {
+        email.classList.remove('invalid');
+        document.getElementById('error-email').style.display = 'none';
+      }
+      // validate message
+      if(!vMessage){
+        ok = false;
+        message.classList.add('invalid');
+        document.getElementById('error-message').style.display = 'block';
+      } else {
+        message.classList.remove('invalid');
+        document.getElementById('error-message').style.display = 'none';
+      }
+      if(ok){
+        // simulate send, show thank you
+        contactForm.innerHTML = "<p style='color:#2563EB;font-size:1.17rem;text-align:center;margin:24px 0 14px;font-weight:600;'>Thank you! We'll respond as soon as possible.</p>";
+      }
+    });
+    contactForm.addEventListener('reset', function(){
+      this.name.classList.remove('invalid');
+      this.email.classList.remove('invalid');
+      this.message.classList.remove('invalid');
+      document.getElementById('error-name').style.display = 'none';
+      document.getElementById('error-email').style.display = 'none';
+      document.getElementById('error-message').style.display = 'none';
+    });
+
+    // SET FOOTER YEAR
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ACCESSIBILITY: trap focus for mobile nav when open
+    function trapFocusInNav() {
+      const focusableEls = navMenu.querySelectorAll('a');
+      hamburger.addEventListener('keydown', e => {
+        if (e.key === "Tab" && navMenu.classList.contains('open')) {
+          e.preventDefault();
+          focusableEls[0].focus();
+        }
+      });
+      navMenu.addEventListener('keydown', e => {
+        if (!navMenu.classList.contains('open')) return;
+        const firstEl = focusableEls[0];
+        const lastEl = focusableEls[focusableEls.length - 1];
+        if (e.key === "Tab") {
+          if (e.shiftKey) {
+            if (document.activeElement === firstEl) {
+              e.preventDefault();
+              lastEl.focus();
+            }
+          } else {
+            if (document.activeElement === lastEl) {
+              e.preventDefault();
+              firstEl.focus();
+            }
+          }
+        }
+        if (e.key === "Escape") {
+          navMenu.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          hamburger.focus();
+        }
+      });
+    }
+    trapFocusInNav();
+  </script>
+</body>
+</html>
