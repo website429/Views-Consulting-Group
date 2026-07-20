@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VIEWS Consulting group</title>
+  <title>BAYE Agribusiness Consultant</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2784/2784408.png">
@@ -47,13 +47,14 @@
     ================================ */
     nav {
       position: fixed;
-      width: 100vw;
+      width: 100%;
       top: 0;
       left: 0;
       z-index: 99;
       background: transparent;
       transition: background 0.3s;
       backdrop-filter: blur(0px) brightness(1);
+      
     }
     nav.scrolled {
       background: rgba(15, 23, 42, 0.95);
@@ -72,6 +73,8 @@
       margin-left: 5px;
       padding-right: 20px;
       width: 100%;
+      display: flex;
+      
     }
     .logo {
       display: flex;
@@ -96,8 +99,9 @@
       margin: 0;
       padding: 0;
       padding-top: 20px;
-      margin-left: auto;
       padding-left: 0;
+      flex-grow: 1;
+      justify-content: flex-end;
     }
     .nav-links a {
       color: var(--white);
@@ -184,6 +188,75 @@
         color: #fff;
       }
     }
+    /*Language switcher*/
+    
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 5px;
+      font-size: 20px;
+    }
+
+    .tig-button:hover {
+      background-color: blue;
+    }
+    .lang-btn:hover {
+      color: var(--primary);
+    }
+    .language-switcher{
+    display:flex;
+    gap:8px;
+    align-items:center;
+    margin-bottom: 18px;
+  }
+
+      .language-switcher button{
+
+          background:transparent;
+          border: 2px solid #D4AF37;
+
+          color:white;
+
+          padding:8px 14px;
+
+          border-radius:20px;
+
+          cursor:pointer;
+
+          transition:.3s;
+          font-weight: bold;
+
+      }
+
+      .language-switcher button:hover {
+        background: #123ca0;
+      }
+
+      language-switcher button:active {
+        background: #123ca0;
+      }
+
+      .language-switcher button{
+          padding:8px 16px;
+          border:none;
+          cursor:pointer;
+          background:#ddd;
+          color:#333;
+          border-radius:5px;
+          transition:.3s;
+    }
+
+    .language-switcher button.active{
+        background:#2563EB;
+        color:white;
+        font-weight:bold;
+      }
+      
     /* ==============================
       HERO SECTION
     ================================ */
@@ -674,6 +747,7 @@
     .portfolio-desc {
       color: #26325f;
       font-size: 0.98rem;
+      
     }
     @media (max-width: 900px) {
       .portfolio-list { gap: 20px; }
@@ -1053,7 +1127,6 @@
       font-size: 0.99rem;
       text-align: center;
       width: 100%;
-      margin-bottom: 20px;
     }
     
     @media (max-width: 1000px) {
@@ -1080,72 +1153,79 @@
       .section-title { font-size: 1.2rem;}
     }
 
-
-    
-
-    
   </style>
 </head>
 <body>
   <!-- NAVBAR -->
   <nav id="navbar">
     <div class="navbar">
-      <a href="#home" class="logo"><img src="images/arma1.jpg" style="border-radius: 50%;" alt="Fullbright Consultancy Services logo"/>VIEWS Consulting Group </a>
+      <a href="#home" class="logo"><img src="images/arma1.jpg" style="border-radius: 50%;" alt="Fullbright Consultancy Services logo"/>BAYE Agribusiness</a>
       <button class="hamburger" aria-label="Open navigation menu" aria-controls="mainmenu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <ul class="nav-links" id="mainmenu">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#why">Why Choose Us</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <ul class="nav-links" id="mainmenu">
+      <div class="language-switcher">
+        <button data-language="en" class="active" >EN</button>
+        <button data-language="tig" >ትግ</button>
+      </div> 
+        <li><a href="#home" class="active" data-i18n="navHome">Home</a></li>
+
+      <li><a href="#about" data-i18n="navAbout">About</a></li>
+
+      <li><a href="#services" data-i18n="navServices">Services</a></li>
+
+      <li><a href="#why" data-i18n="navWhy">Why Choose Us</a></li>
+
+      <li><a href="#portfolio" data-i18n="navPortfolio">Portfolio</a></li>
+
+      <li><a href="#testimonials" data-i18n="navTestimonials">Testimonials</a></li>
+
+      <li><a href="#faq" data-i18n="navFaq">FAQ</a></li>
+
+      <li><a href="#contact" data-i18n="navContact">Contact</a></li>
       </ul>
     </div>
   </nav>
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-content" >
-      <h1 style="text-shadow: 10px 10px 5px black;">Helping Ethiopian Businesses Grow Through Innovation</h1>
-      <p style="font-weight: bold; text-shadow: 10px 10px 5px black;">
-        VIEWS Consulting group empowers organizations and entrepreneurs in Ethiopia to achieve sustainable growth by providing world-class consulting, digital, and business development services tailored to local needs.
-      </p>
+
+      <h1 style="text-shadow:10px 10px 5px black;" data-i18n="heroTitle"> Helping Ethiopian Businesses Grow Through Innovation</h1>
+
+     <p style="font-weight:bold;text-shadow:10px 10px 5px black;" data-i18n="heroText"> BAYE Agribusiness group empowers organizations and entrepreneurs in Ethiopia to achieve sustainable growth by providing world-class consulting, digital, and business development services tailored to local needs.</p>
       <div class="hero-buttons">
-        <a class="btn" href="#contact" style="text-shadow: 10px 10px 10px black;">Contact Us</a>
+        <a class="btn" href="#contact" data-i18n="heroButton"> Contact Us </a>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about">
-    <h2 class="section-title" >About VIEWS Consulting Group</h2>
-    <p class="section-desc">
+    <h2 class="section-title" >About BAYE Agribusiness</h2>
+    <p class="section-desc" data-i18n="aboutDesc">
       A trusted partner in Ethiopian business development, innovation, and consulting.
     </p>
     <div class="about-container">
       <div class="about-intro fade-in">
-        <h3 style="color: #2563EB; font-size:1.25rem; margin-bottom:7px;">Who We Are</h3>
-        <p>
-          VIEWS Consulting Group is a premier business development and consulting firm based in Mekele, Tigray, Ethiopia. Our dynamic team is dedicated to guiding startups and established companies towards success, efficiency, and sustainable growth in the local and global market.
+        <h3 style="color: #2563EB; font-size:1.25rem; margin-bottom:7px;" data-i18n="whoWeAre">Who We Are</h3>
+        <p data-i18n="whoWeAreText">
+          BAYE Agribusiness is a premier business development and consulting firm based in Mekele, Tigray, Ethiopia. Our dynamic team is dedicated to guiding startups and established companies towards success, efficiency, and sustainable growth in the local and global market.
         </p>
       </div>
       <div class="about-list fade-in">
         <div class="about-list-item">
-          <h4>Our Mission</h4>
-          <p>To empower Ethiopian businesses by delivering innovative, reliable, and impactful business development solutions and consulting services.</p>
+          <h4 data-i18n="missionTitle">Our Mission</h4>
+          <p data-i18n="missionText">To empower Ethiopian businesses by delivering innovative, reliable, and impactful business development solutions and consulting services.</p>
         </div>
         <div class="about-list-item">
-          <h4>Our Vision</h4>
-          <p>To be Ethiopia's leading catalyst for business growth, recognized for excellence and integrity.</p>
+          <h4 data-i18n="visionTitle">Our Vision</h4>
+          <p data-i18n="visionText">To be Ethiopia's leading catalyst for business growth, recognized for excellence and integrity.</p>
         </div>
         <div class="about-list-item">
-          <h4>Our Core Values</h4>
-          <p>Integrity, Innovation, Client Focus, Excellence, Teamwork, and Commitment to Local Development.</p>
+          <h4 data-i18n="valuesTitle">Our Core Values</h4>
+          <p data-i18n="valuesText">Integrity, Innovation, Client Focus, Excellence, Teamwork, and Commitment to Local Development.</p>
         </div>
       </div>
     </div>
@@ -1153,68 +1233,68 @@
 
   <!-- SERVICES -->
   <section id="services">
-    <h2 class="section-title">Our Services</h2>
-    <p class="section-desc">Comprehensive business solutions designed to help organizations thrive and innovate.</p>
+    <h2 class="section-title" data-i18n="servicesTitle">Our Services</h2>
+    <p class="section-desc" data-i18n="servicesDesc">Comprehensive business solutions designed to help organizations thrive and innovate.</p>
     <div class="services-list">
       <div class="service-card fade-in">
         <div class="service-icon">
           <span aria-hidden="true">💼</span>
         </div>
-        <div class="service-title">Business Consulting</div>
+        <div class="service-title" data-i18n="service1">Business Consulting</div>
       </div>
       <div class="service-card fade-in">
         <div class="service-icon">
           <span aria-hidden="true">🚀</span>
         </div>
-        <div class="service-title">Startup Support</div>
+        <div class="service-title" data-i18n="service2">Startup Support</div>
       </div>
       <div class="service-card fade-in">
         <div class="service-icon">
           <span aria-hidden="true">📝</span>
         </div>
-        <div class="service-title">Business Registration</div>
+        <div class="service-title" data-i18n="service3">Business Registration</div>
       </div>
       <div class="service-card fade-in">
         <div class="service-icon">
           <span aria-hidden="true">📲</span>
         </div>
-        <div class="service-title">Digital Marketing</div>
+        <div class="service-title" data-i18n="service4">Digital Marketing</div>
       </div>
       <div class="service-card fade-in">
         <div class="service-icon">
           <span aria-hidden="true">📊</span>
         </div>
-        <div class="service-title">Financial Consulting</div>
+        <div class="service-title" data-i18n="service5">Financial Consulting</div>
       </div>
       <div class="service-card fade-in">
         <div class="service-icon">
           <span aria-hidden="true">🎓</span>
         </div>
-        <div class="service-title">Professional Training</div>
+        <div class="service-title" data-i18n="service6">Professional Training</div>
       </div>
     </div>
   </section>
 
   <!-- WHY CHOOSE US -->
   <section id="why">
-    <h2 class="section-title">Why VIEWS Consulting Group ?</h2>
-    <p class="section-desc">Fullbright Consultancy delivers strategic business value with proven results and innovative approaches.</p>
+    <h2 class="section-title" data-i18n="whyTitle">Why BAYE Agribusiness ?</h2>
+    <p class="section-desc" data-i18n="whyDesc">BAYE Agribusiness delivers strategic business value with proven results and innovative approaches.</p>
     <div class="features-list">
       <div class="feature-card fade-in">
         <span class="feature-icon" aria-hidden="true" >✔️</span>
-        <div class="feature-title">Experienced Team</div>
+        <div class="feature-title" data-i18n="feature1">Experienced Team</div>
       </div>
       <div class="feature-card fade-in">
         <span class="feature-icon" aria-hidden="true">💡</span>
-        <div class="feature-title">Affordable Solutions</div>
+        <div class="feature-title" data-i18n="feature2">Affordable Solutions</div>
       </div>
       <div class="feature-card fade-in">
         <span class="feature-icon" aria-hidden="true">⚡</span>
-        <div class="feature-title">Fast Service</div>
+        <div class="feature-title" data-i18n="feature3">Fast Service</div>
       </div>
       <div class="feature-card fade-in">
         <span class="feature-icon" aria-hidden="true">🤝</span>
-        <div class="feature-title">Trusted by Clients</div>
+        <div class="feature-title" data-i18n="feature4">Trusted by Clients</div>
       </div>
     </div>
   </section>
@@ -1224,33 +1304,33 @@
     <div class="stats-list">
       <div class="stat-card fade-in">
         <div class="stat-count" data-target="150">0+</div>
-        <div class="stat-label">Businesses Served</div>
+        <div class="stat-label" data-i18n="stat1">Businesses Served</div>
       </div>
       <div class="stat-card fade-in">
         <div class="stat-count" data-target="98">0%</div>
-        <div class="stat-label">Satisfied Clients</div>
+        <div class="stat-label" data-i18n="stat2">Satisfied Clients</div>
       </div>
       <div class="stat-card fade-in">
         <div class="stat-count" data-target="10">0+</div>
-        <div class="stat-label">Professional Experts</div>
+        <div class="stat-label" data-i18n="stat3">Professional Experts</div>
       </div>
       <div class="stat-card fade-in">
         <div class="stat-count" data-target="8">0+</div>
-        <div class="stat-label">Years Experience</div>
+        <div class="stat-label" data-i18n="stat4">Years Experience</div>
       </div>
     </div>
   </section>
 
   <!-- PORTFOLIO -->
   <section id="portfolio">
-    <h2 class="section-title">Our Portfolio</h2>
-    <p class="section-desc">A showcase of client success stories and outstanding impact.</p>
+    <h2 class="section-title" data-i18n="portfolioTitle">Our Portfolio</h2>
+    <p class="section-desc" data-i18n="portfolioDesc">A showcase of client success stories and outstanding impact.</p>
     <div class="portfolio-list">
       <!--card 1-->
       <div class="portfolio-card fade-in">
         <img class="portfolio-img" src="images/bg-image3.jpg" alt="project description"/>
         <div class="portfolio-overlay">
-          <div class="portfolio-title">Business Strategy planning</div>
+          <div class="portfolio-title" data-i18n="portfolio1">Business Strategy planning</div>
         </div>
       </div>
 
@@ -1258,7 +1338,7 @@
       <div class="portfolio-card fade-in">
         <img class="portfolio-img" src="images/bg-image4.jpg" alt="Digital Marketing Success"/>
         <div class="portfolio-overlay">
-          <div class="portfolio-title">brand acceleration</div>
+          <div class="portfolio-title" data-i18n="portfolio2">Brand acceleration</div>
         </div>
       </div>
 
@@ -1266,14 +1346,14 @@
       <div class="portfolio-card fade-in">
         <img class="portfolio-img" src="images/bg-image5.jpg" alt="Business Registration"/>
         <div class="portfolio-overlay">
-          <div class="portfolio-title">Business registeration</div>
+          <div class="portfolio-title" data-i18n="portfolio3">Business registeration</div>
         </div>
       </div>
       <!--card 4-->
       <div class="portfolio-card fade-in">
         <img class="portfolio-img" src="images/bg-image6.jpg" alt="Startup Launch"/>
         <div class="portfolio-overlay">
-          <div class="portfolio-title">Start up growth</div>
+          <div class="portfolio-title" data-i18n="portfolio4">Start up growth</div>
         </div>
       </div>
     </div>
@@ -1281,28 +1361,28 @@
 
   <!-- TESTIMONIALS -->
   <section id="testimonials" style="border-radius: 0 !important;">
-    <h2 class="section-title">Testimonials</h2>
-    <p class="section-desc" style="color: #25D366; font-weight: bold;">Hear from those we've helped grow.</p>
+    <h2 class="section-title" data-i18n="testimonialTitle">Testimonials</h2>
+    <p class="section-desc" style="color: #25D366; font-weight: bold;" data-i18n="testimonialTitle">Hear from those we've helped grow.</p>
     <div class="testimonials-slider" id="testimonial-slider">
       <div class="testimonial-card active fade-in">
-        <div class="testimonial-quote">"VIEWS Consulting Group's strategic advice has been a game-changer for our startup. Their deep understanding of the Ethiopian market enabled us to launch rapidly and scale with confidence."</div>
+        <div class="testimonial-quote" data-i18n="testimonial1">"BAYE Agribusiness's strategic advice has been a game-changer for our startup. Their deep understanding of the Ethiopian market enabled us to launch rapidly and scale with confidence."</div>
         <div class="testimonial-author">
           <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/31.jpg" alt="Samuel W."/>
-          Samuel W.<span style="font-weight:400; color:#4b5877"></span>
+          Samuel <span style="font-weight:400; color:#4b5877"></span>
         </div>
       </div>
       <div class="testimonial-card fade-in">
-        <div class="testimonial-quote">"VIEWS Consulting Group handled our business registration and compliance seamlessly. Their professionalism and swift service let us focus on growing our business."</div>
+        <div class="testimonial-quote" data-i18n="testimonial2">"BAYE Agribusiness handled our business registration and compliance seamlessly. Their professionalism and swift service let us focus on growing our business."</div>
         <div class="testimonial-author">
           <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/46.jpg" alt="Mekdes G."/>
-          Mekdes G.<span style="font-weight:400; color:#4b5877"></span>
+          Mekdes <span style="font-weight:400; color:#4b5877"></span>
         </div>
       </div>
       <div class="testimonial-card fade-in">
-        <div class="testimonial-quote">"The digital marketing team at VIEWS Consulting Group elevated our brand and brought measurable results. We saw a huge increase in engagement and conversions."</div>
+        <div class="testimonial-quote" data-i18n="testimonial3">"BAYE Agribusiness's digital marketing team elevated our brand and brought measurable results. We saw a huge increase in engagement and conversions."</div>
         <div class="testimonial-author">
           <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/85.jpg" alt="Abel F."/>
-          Abel F.<span style="font-weight:400; color:#4b5877"></span>
+          Abel <span style="font-weight:400; color:#4b5877"></span>
         </div>
       </div>
       <div class="testimonial-controls">
@@ -1314,130 +1394,86 @@
 
   <!-- FAQ -->
   <section id="faq">
-    <h2 class="section-title">Frequently Asked Questions</h2>
-    <p class="section-desc">Find answers to common questions about our services.</p>
+    <h2 class="section-title" data-i18n="faqTitle">Frequently Asked Questions</h2>
+    <p class="section-desc" data-i18n="faqDesc">Find answers to common questions about our services.</p>
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
-          Do you provide support for startups and new businesses?
+          <span data-i18n="faqQ1">
+              Do you provide support for startups and new businesses?
+          </span>
           <span aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
+       </button>
+        <div class="faq-answer" data-i18n="faqA1">
           Absolutely! We provide end-to-end startup mentoring, business plan development, legal registration, and market launch support.
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
-          How long does business registration typically take?
+          <span  data-i18n="faqQ2">How long does business registration typically take?</span>
           <span aria-hidden="true">+</span>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" data-i18n="faqA2">
           Usually, business registration in Ethiopia takes 1-3 weeks depending on the complexity, type of business, and required permits.
         </div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          What are your consulting fees?
+        <button class="faq-question" aria-expanded="false" >
+          <span data-i18n="faqQ3">What are your consulting fees?</span>
           <span aria-hidden="true">+</span>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" data-i18n="faqA3" >
           Our fees are competitive and tailored to the scope and requirements of your project. Book a free consult to get a custom quote.
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
-          Can you help with digital marketing and branding?
+          <span  data-i18n="faqQ4">Can you help with digital marketing and branding?</span>
           <span aria-hidden="true">+</span>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" data-i18n="faqA4">
           Yes! Our digital marketing experts offer end-to-end services, including social media, SEO, and result-driven campaigns.
         </div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          Is your team familiar with local business regulations?
+        <button class="faq-question" aria-expanded="false" >
+          <span data-i18n="faqQ5">Is your team familiar with local business regulations?</span>
           <span aria-hidden="true">+</span>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" data-i18n="faqA5">
           Our experts have deep local knowledge of Ethiopian regulations, ensuring compliance and smooth business operations for clients.
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT
-  <section id="contact">
-    <h2 class="section-title">Contact Us</h2>
-    <p class="section-desc" style="color: #25D366; font-weight: bold;">Let's take your business to the next level. Reach out to Fullbright Consultancy today!</p>
-    <div class="contact-container" style="justify-content: center !important; display: flex !important; padding: 10px !important;">
-      
-      <div class="contact-info-section fade-in" style="width: 100% !important; max-width: 600px !important; ">
-        <div class="contact-form-section fade-in" style="background: none;">
-        <div class="contact-links" style="height: 100%;">
-          <a href="tel:+251912345678">
-            <i class="fas fa-phone" style="font-size: larger; margin-right: 10px; background-color: red; padding: 8px 10px; border-radius: 3px;"></i>
-          </a>
-          <a href="https://t.me/Dr_Fullbright" class="contact-link-btn telegram" target="_blank" rel="noopener">
-            <i class="fab fa-telegram" ></i>
-          </a>
-          <a href="https://wa.me/251911871711" class="contact-link-btn whatsapp" target="_blank" rel="noopener">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-        </div>
-      </div>
-        <div >
-          <div class="contact-info-label">Office Address</div>
-          <ul class="contact-info-list">
-            <li>
-              <span aria-hidden="true">📍</span>
-              Axum Hotel Street, Mekelle, Tigray
-            </li>
-            <li>
-              <span aria-hidden="true">📞</span>
-              <a href="tel:+251912345678" style="color:#2563EB;text-decoration:none;">09 11 87 17 11</a>
-            </li>
-            
-          </ul>
-        </div>
-        <div class="contact-map" style="margin-top: 20px;">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.8094650343096!2d39.47054147486386!3d13.485835386878883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x166afde36c898c3d%3A0x964226c54982f3ee!2sFullbright%20Consultancy%20Services!5e0!3m2!1sen!2set!4v1784305834628!5m2!1sen!2set"
-          width="100%" 
-          height="200" 
-          style="border:0; border-radius: 10px;" 
-          allowfullscreen="" 
-          loading="lazy">
-        </iframe>
-      </div>
-      </div>
-    </div>
-  </section> -->
+  
 
   <!-- CONTACT -->
 <section id="contact">
-  <h2 class="section-title" style="text-shadow: 10px 10px 5px black;">Contact Us</h2>
-  <p class="section-desc" style="color: black; font-weight: bold; margin-bottom: 0 !important; color: gold; text-shadow: 10px 10px 5px black;">We are here to help. Reach out to us through the channels below!</p>
+  <h2 class="section-title" style="text-shadow: 10px 10px 5px black;" data-i18n="contactTitle">Contact Us</h2>
+  <p class="section-desc" style="color: black; font-weight: bold; margin-bottom: 0 !important; color: gold; text-shadow: 10px 10px 5px black;" data-i18n="contactDesc">We are here to help. Reach out to us through the channels below!</p>
   
   <div class="contact-container" style="justify-content: center; display: flex; padding: 10px;">
     
     <!-- የመረጃ እና የካርታ ክፍል -->
     <div class="contact-info-section fade-in" style="width: 100%; max-width: 600px; padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow); border: 5px solid rgb(42, 42, 176);">
       
-      <div class="contact-info-label" style="font-size: 1.5rem; margin-bottom: 10px; color: red; text-shadow: 10px 10px 5px black;">Our Office</div>
+      <div class="contact-info-label" style="font-size: 1.5rem; margin-bottom: 10px; color: red; text-shadow: 10px 10px 5px black;" data-i18n="officeTitle">Our Office</div>
       <ul class="contact-info-list" style="font-size: 1.1rem; list-style: none; padding: 0;">
-        <li style="margin-bottom: 10px; text-shadow: 10px 10px 5px black; color: #e8effb;">📍 Hadinet, Mekele, Tigray</li>
-        <li style="margin-bottom: 10px; text-shadow: 10px 10px 5px black; ">📞 <a href="tel:+251934346264" style="color:#2563EB; text-decoration:none; color: #e8effb;">09 34 34 62 64</a></li>
+        <li style="margin-bottom: 10px; text-shadow: 10px 10px 5px black; color: #e8effb;" data-i18n="officeAddress">📍 Michaels, Mekele, Tigray</li>
+        <li style="margin-bottom: 10px; text-shadow: 10px 10px 5px black; ">📞 <a href="tel:+251930309915" style="color:#2563EB; text-decoration:none; color: #e8effb;">09 30 30 99 15</a></li>
       </ul>
       
       <!-- ማህበራዊ ሚዲያ ሊንኮች -->
       <div class="contact-links" style="display: flex; gap: 15px; margin-top: 10px;">
-         <a href="tel:+251934346264">
+         <a href="tel:+251930309915">
             <i class="fas fa-phone" style="font-size: larger; margin-right: 10px; background-color: red; padding: 8px 10px; border-radius: 3px;"></i>
           </a>
+          <!--
           <a href="https://t.me/+251934346264" class="contact-link-btn telegram" target="_blank" rel="noopener">
             <i class="fab fa-telegram" ></i>
-
-          </a>
+          </a> -->
           <a href="https://wa.me/251934346264" class="contact-link-btn whatsapp" target="_blank" rel="noopener">
             <i class="fab fa-whatsapp"></i>
           </a>
@@ -1446,7 +1482,7 @@
       <!-- ካርታ -->
       <div class="contact-map" style="margin-top: 15px; width: 100%; height: 250px;">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.684143166071!2d39.465738!3d13.4935504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x166afdae38ab55b3%3A0x3e57ee3759590134!2sVIEWS%20Consulting%20Group!5e0!3m2!1sen!2set!4v1784449237746!5m2!1sen!2set"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.72322215521!2d39.4682252!3d13.4911451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x166afd005d73e557%3A0xb83bd56bc9e2703b!2sBAYE%20Agribusiness%20Consultant!5e0!3m2!1sen!2set!4v1784459798075!5m2!1sen!2set"
           width="100%" 
           height="200" 
           style="border:0; border-radius: 10px;" 
@@ -1464,34 +1500,36 @@
       <div class="footer-col">
         <a class="footer-logo" href="#home"><img src="images/arma1.jpg" style="width:50px;height:50px; border-radius: 50%; " alt="Fullbright Footer Logo"/>VIEWS Consulting Group</a>
         <div style="color:#c2cbe5;font-size:1.01rem; margin-top: 15px; margin-bottom: 0 !important;">
-         📍 Hadinet, Mekele, Tigray
+         📍 Michaels, Mekele, Tigray
         </div>
       </div>
       <div class="footer-col" style="margin-top: 0 !important;">
-        <div style="font-weight:600;color:#fff;margin-bottom:8px;">Quick Links</div>
+        <div style="font-weight:600;color:#fff;margin-bottom:8px;" data-i18n="quickLinks">Quick Links</div>
         <ul class="footer-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#why">Why Choose Us</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about" data-i18n="navAbout">About</a></li>
+          <li><a href="#services" data-i18n="navServices">Services</a></li>
+          <li><a href="#why" data-i18n="navWhy">Why Choose Us</a></li>
+          <li><a href="#portfolio" data-i18n="navPortofolio">Portfolio</a></li>
+          <li><a href="#testimonials" data-i18n="navTestimonials">Testimonials</a></li>
+          <li><a href="#faq" data-i18n="navFaq">FAQ</a></li>
+          <li><a href="#contact" data-i18n="navContact">Contact</a></li>
+            
+          
         </ul>
       </div>
       <div class="footer-col" style="margin-top: 50px;">
-        <div style="font-weight:600;color:#fff;margin-bottom:8px;">Contact</div>
+        <div style="font-weight:600;color:#fff;margin-bottom:8px;" >Contact</div>
         <div class="footer-social">
-          <a href="tel:+251934346264">
+          <a href="tel:+251930309915">
             <i class="fas fa-phone" ></i>
           </a>
 
-          <a href="https://t.me/+251934346264" class="contact-link-btn telegram" target="_blank" rel="noopener">
+         <!-- <a href="https://t.me/+251934346264" class="contact-link-btn telegram" target="_blank" rel="noopener">
             <i class="fab fa-telegram" ></i>
-          </a>
+          </a> -->
           
           
-          <a href="https://wa.me/251934346264" class="contact-link-btn whatsapp" target="_blank" rel="noopener">
+          <a href="https://wa.me/251930309915" class="contact-link-btn whatsapp" target="_blank" rel="noopener">
             <i class="fab fa-whatsapp"></i>
           </a>
         </div>
@@ -1500,7 +1538,7 @@
     </div>
     
     <div class="footer-copyright">
-      &copy; <span id="year"></span>Fullbright Consultancy All Rights Reserved.
+      &copy; <span id="year"></span>BAYE Agribusiness All Rights Reserved.
     </div>
   </footer>
   <script>
@@ -1733,7 +1771,8 @@
         }
       });
     }
-    trapFocusInNav();
+   
   </script>
+  <script src="language.js"></script>
 </body>
 </html>
