@@ -50,7 +50,7 @@ service5:"Financial Consulting",
 service6:"Professional Training",
 
 whyTitle:"Why Views Cosulting group?",
-whyDesc:"BAYE Agribusiness delivers strategic business value with proven results and innovative approaches.",
+whyDesc:"Views Cosulting Group  delivers strategic business value with proven results and innovative approaches.",
 
 feature1:"Experienced Team",
 feature2:"Affordable Solutions",
@@ -124,7 +124,7 @@ navFaq:"ብዙሕ ግዜ ዝሕተቱ ሕቶታት",
 
 navContact:"ርኸቡና",
 
-heroTitle:"ንኢትዮጵያዊ ትካላት ብተገዳስነት ክዓብዩ ንሕግዝ",
+heroTitle:"ንኢትዮጵያዊያን ትካላት ብተገዳስነት ክዓብዩ ንሕግዝ",
 
 heroText:"Views Cosulting group ብሞያዊ ኮንሳልቲንግ፣ ዲጂታል ፍታሕን ልምዓት ንግድን ንውድባትን ነጋዶን ናብ ዘላቒ ዕብየት ይመርሕ።",
 
@@ -137,7 +137,7 @@ whoWeAre:"ንሕና መን ኢና",
 whoWeAreText:"Views Cosulting group ኣብ መቐለ፣ ትግራይ፣ ኢትዮጵያ ዝመሰረተ ናይ ልምዓት ንግዲን ኮንሳልቲንግን ትካል እዩ። ብብቕዓት ዝተሞልአ ጉጅለና ንሓደሽቲን ዝተመስረቱን ትካላት ናብ ዘላቒ ዕብየት ይመርሕ።",
 
 missionTitle:"ተልእኾና",
-missionText:"ብሓዳስነትን ብሞያዊ ምኽርን ንኢትዮጵያዊ ትካላት ምብርታዕ።",
+missionText:"ብተገዳስነት ብሞያዊ ምኽርን ንኢትዮጵያዊ ትካላት ምብርታዕ።",
 
 visionTitle:"ራእይና",
 visionText:"ኣብ ኢትዮጵያ ቀዳማይ መሪሕ ትካል ልምዓት ንግዲ ምዃን።",
