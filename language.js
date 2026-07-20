@@ -20,7 +20,7 @@ navContact:"Contact",
 
 heroTitle:"Helping Ethiopian Businesses Grow Through Innovation",
 
-heroText:"BAYE Agribusiness group empowers organizations and entrepreneurs in Ethiopia to achieve sustainable growth by providing world-class consulting, digital, and business development services tailored to local needs.",
+heroText:"Views Consulting Group empowers organizations and entrepreneurs in Ethiopia to achieve sustainable growth by providing world-class consulting, digital, and business development services tailored to local needs.",
 
 heroButton:"Contact Us",
 
@@ -28,7 +28,7 @@ aboutDesc:"A trusted partner in Ethiopian business development, innovation, and 
 
 whoWeAre:"Who We Are",
 
-whoWeAreText:"BAYE Agribusiness is a premier business development and consulting firm based in Mekele, Tigray, Ethiopia. Our dynamic team is dedicated to guiding startups and established companies towards success, efficiency, and sustainable growth in the local and global market.",
+whoWeAreText:"Views Consulting Group is a premier business development and consulting firm based in Mekele, Tigray, Ethiopia. Our dynamic team is dedicated to guiding startups and established companies towards success, efficiency, and sustainable growth in the local and global market.",
 
 missionTitle:"Our Mission",
 missionText:"To empower Ethiopian businesses by delivering innovative, reliable, and impactful business development solutions and consulting services.",
@@ -49,8 +49,8 @@ service4:"Digital Marketing",
 service5:"Financial Consulting",
 service6:"Professional Training",
 
-whyTitle:"Why BAYE Agribusiness?",
-whyDesc:"BAYE Agribusiness delivers strategic business value with proven results and innovative approaches.",
+whyTitle:"Why Views Consulting Group?",
+whyDesc:"Views Consulting Group delivers strategic business value with proven results and innovative approaches.",
 
 feature1:"Experienced Team",
 feature2:"Affordable Solutions",
@@ -73,11 +73,11 @@ portfolio4:"Startup Growth",
 testimonialTitle:"Testimonials",
 testimonialDesc:"Hear from those we've helped grow.",
 
-testimonial1:"BAYE Agribusiness's strategic advice has been a game-changer for our startup. Their deep understanding of the Ethiopian market enabled us to launch rapidly and scale with confidence.",
+testimonial1:"Views Consulting Group's strategic advice has been a game-changer for our startup. Their deep understanding of the Ethiopian market enabled us to launch rapidly and scale with confidence.",
 
-testimonial2:"BAYE Agribusiness handled our business registration and compliance seamlessly. Their professionalism and swift service let us focus on growing our business.",
+testimonial2:"Views Consulting Group handled our business registration and compliance seamlessly. Their professionalism and swift service let us focus on growing our business.",
 
-testimonial3:"BAYE Agribusiness's digital marketing team elevated our brand and brought measurable results. We saw a huge increase in engagement and conversions.",
+testimonial3:"Views Consulting Group's digital marketing team elevated our brand and brought measurable results. We saw a huge increase in engagement and conversions.",
 faqTitle:"Frequently Asked Questions",
 faqDesc:"Find answers to common questions about our services.",
 
@@ -100,7 +100,7 @@ contactTitle:"Contact Us",
 contactDesc:"We are here to help. Reach out to us through the channels below!",
 
 officeTitle:"Our Office",
-officeAddress:"📍 Michaels, Mekele, Tigray",
+officeAddress:"📍 , Mekele, Tigray",
 
 quickLinks:"Quick Links",
 
