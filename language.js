@@ -20,7 +20,7 @@ navContact:"Contact",
 
 heroTitle:"Helping Ethiopian Businesses Grow Through Innovation",
 
-heroText:"Views Cosulting group empowers organizations and entrepreneurs in Ethiopia to achieve sustainable growth by providing world-class consulting, digital, and business development services tailored to local needs.",
+heroText:"Views Consulting group empowers organizations and entrepreneurs in Ethiopia to achieve sustainable growth by providing world-class consulting, digital, and business development services tailored to local needs.",
 
 heroButton:"Contact Us",
 
@@ -28,7 +28,7 @@ aboutDesc:"A trusted partner in Ethiopian business development, innovation, and 
 
 whoWeAre:"Who We Are",
 
-whoWeAreText:"Views Cosulting group is a premier business development and consulting firm based in Mekele, Tigray, Ethiopia. Our dynamic team is dedicated to guiding startups and established companies towards success, efficiency, and sustainable growth in the local and global market.",
+whoWeAreText:"Views Consulting group is a premier business development and consulting firm based in Mekele, Tigray, Ethiopia. Our dynamic team is dedicated to guiding startups and established companies towards success, efficiency, and sustainable growth in the local and global market.",
 
 missionTitle:"Our Mission",
 missionText:"To empower Ethiopian businesses by delivering innovative, reliable, and impactful business development solutions and consulting services.",
@@ -49,8 +49,8 @@ service4:"Digital Marketing",
 service5:"Financial Consulting",
 service6:"Professional Training",
 
-whyTitle:"Why Views Cosulting group?",
-whyDesc:"Views Cosulting Group  delivers strategic business value with proven results and innovative approaches.",
+whyTitle:"Why Views Consulting group?",
+whyDesc:"Views Consulting Group  delivers strategic business value with proven results and innovative approaches.",
 
 feature1:"Experienced Team",
 feature2:"Affordable Solutions",
@@ -73,11 +73,11 @@ portfolio4:"Startup Growth",
 testimonialTitle:"Testimonials",
 testimonialDesc:"Hear from those we've helped grow.",
 
-testimonial1:"Views Cosulting group's strategic advice has been a game-changer for our startup. Their deep understanding of the Ethiopian market enabled us to launch rapidly and scale with confidence.",
+testimonial1:"Views Consulting group's strategic advice has been a game-changer for our startup. Their deep understanding of the Ethiopian market enabled us to launch rapidly and scale with confidence.",
 
-testimonial2:"Views Cosulting group handled our business registration and compliance seamlessly. Their professionalism and swift service let us focus on growing our business.",
+testimonial2:"Views Consulting group handled our business registration and compliance seamlessly. Their professionalism and swift service let us focus on growing our business.",
 
-testimonial3:"Views Cosulting group's digital marketing team elevated our brand and brought measurable results. We saw a huge increase in engagement and conversions.",
+testimonial3:"Views Consulting group's digital marketing team elevated our brand and brought measurable results. We saw a huge increase in engagement and conversions.",
 faqTitle:"Frequently Asked Questions",
 faqDesc:"Find answers to common questions about our services.",
 
@@ -126,7 +126,7 @@ navContact:"ርኸቡና",
 
 heroTitle:"ንኢትዮጵያዊያን ትካላት ብተገዳስነት ክዓብዩ ንሕግዝ",
 
-heroText:"Views Cosulting group ብሞያዊ ኮንሳልቲንግ፣ ዲጂታል ፍታሕን ልምዓት ንግድን ንውድባትን ነጋዶን ናብ ዘላቒ ዕብየት ይመርሕ።",
+heroText:"Views Consulting group ብሞያዊ ኮንሳልቲንግ፣ ዲጂታል ፍታሕን ልምዓት ንግድን ንውድባትን ነጋዶን ናብ ዘላቒ ዕብየት ይመርሕ።",
 
 heroButton:"ርኸቡና",
 
@@ -134,7 +134,7 @@ aboutDesc:"ኣብ ልምዓት ንግዲ፣ ሓዳስነትን ምኽርን ዝ�
 
 whoWeAre:"ንሕና መን ኢና",
 
-whoWeAreText:"Views Cosulting group ኣብ መቐለ፣ ትግራይ፣ ኢትዮጵያ ዝመሰረተ ናይ ልምዓት ንግዲን ኮንሳልቲንግን ትካል እዩ። ብብቕዓት ዝተሞልአ ጉጅለና ንሓደሽቲን ዝተመስረቱን ትካላት ናብ ዘላቒ ዕብየት ይመርሕ።",
+whoWeAreText:"Views Consulting group ኣብ መቐለ፣ ትግራይ፣ ኢትዮጵያ ዝመሰረተ ናይ ልምዓት ንግዲን ኮንሳልቲንግን ትካል እዩ። ብብቕዓት ዝተሞልአ ጉጅለና ንሓደሽቲን ዝተመስረቱን ትካላት ናብ ዘላቒ ዕብየት ይመርሕ።",
 
 missionTitle:"ተልእኾና",
 missionText:"ብተገዳስነት ብሞያዊ ምኽርን ንኢትዮጵያዊ ትካላት ምብርታዕ።",
